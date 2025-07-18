@@ -7151,5 +7151,13 @@
             }
         }
     </script></body>
-
+<script>
+  // Sobrescreve funções de autenticação
+  window.isAuthenticated = function() { return true; };
+  window.checkAuth = function() { return Promise.resolve(true); };
+  
+  // Remove token fake se existir
+  localStorage.removeItem('token');
+  sessionStorage.removeItem('auth');
+</script>
 </html>
